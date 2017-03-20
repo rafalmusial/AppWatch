@@ -1,3 +1,9 @@
+$firstColor: #20365F;
+$secondColor: #376391;
+$thirdColor: #26262B;
+$fourthColor: #C24644;
+$fifthColor: #eee;
+
 //mixin generujący poprawne instrukcje dla roznych przeglądarek
 @mixin flexbox() {
   display: -webkit-box;
@@ -39,56 +45,66 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
   .block {
     flex: 1 100%; //domyslnie element ma 100% szerokoci
     box-sizing: border-box;
-    padding: 5px;
+    padding: 15px 15px;
 
     a {
       text-decoration: none;
     }
 
     .inner {
-      background-image: url('../images/test.jpg');
+      height: 250px;
+      padding-top: 20%;
+
+      background-image: url('../images/test.jpg');// Wypełniacz pustych miejsc
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
 
-      color: #fff;
-      height: 250px;
-      line-height: 100px;
+      color: $thirdColor;
       font-weight: 700;
-      font-size: 3rem;
+      font-size: 2rem;
       text-align: center;
 
       p {
         display: none;
       }
-
-
     }
     .inner:hover {
+      height: 250px;
+      padding-top: 20%;
 
       background-image: url('../images/test.jpg');
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
 
-      color: #fff;
-      height: 250px;
-      line-height: 100px;
+      color: $thirdColor;
       font-weight: 700;
-      font-size: 3rem;
+      font-size: 2rem;
       text-align: center;
+      font-weight: bold;
+
+
       -webkit-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.4);
       -moz-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.4);
       box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.4);
 
       p {
         display: block;
-        background-color: rgba(0,0,0,0.25);
-        margin-left: 40px;
-        margin-right: 40px;
+        max-height: 60%;
+        padding: 10px;
+        margin: 0.5em 2em 0 2em;
+
+
+        color: $fifthColor;
+        font-size: .9rem;
+        text-align: center;
+
+        background-color: rgba(0,0,0,0.77);
 
         span {
-          color: #ff0001;
+          color: $fourthColor;
+          font-size: 1.2rem;
         }
       }
     }
