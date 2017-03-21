@@ -35,25 +35,39 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
     @content;
   }
 }
+
 // Menu mobile
 .logo {
+  max-height: 110px;
   flex: 1 100%;
-  font-size: 3rem;
+  font-family: 'Baloo';
+  font-size: 4rem;
+  color: $firstColor;
   text-align: center;
 
   span {
+    color: $secondColor;
+    font-family: 'Arvo';
     font-size: 1rem;
-    display: block;
+    font-weight: bold;
+    display:block;
     text-align: center;
+    position: relative;
+    bottom: 20px;
   }
 }
 .menu {
   flex: 1 100%;
+  font-family: 'Baloo';
+
 
   .toggle {
-    font-size: 1.5rem;
-    border: 1px solid black;
+    font-size: 1.6rem;
     text-align: center;
+    border-radius: 7px;
+    -webkit-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.7);
+    -moz-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.7);
+    box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.7);
   }
 
   nav ul {
@@ -64,23 +78,24 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
   nav ul li {
     width:100%;
     min-width:0;
-    border:1px solid #000;
+    border-bottom: 3px double $secondColor;
     font-size: 1.5rem;
-
   }
   nav ul li a {
     display: block;
     text-align: center;
     text-decoration: none;
-    color: $thirdColor;
+    color: $secondColor;
+    &:hover {
+      color: $firstColor;
+    }
   }
 }
 // menu mobilne end
 
 
-
-
 .container {
+
   max-width: 1200px; //maksymalna szerokosc kontenera
   margin: 0px auto; //wysrodkowanie
   @include flexbox; //uzywamy mixinów
@@ -90,6 +105,7 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
     flex: 1 100%; //domyslnie element ma 100% szerokoci
     box-sizing: border-box;
     padding: 15px 15px;
+    font-family: 'Baloo', cursive;
 
     a {
       text-decoration: none;
@@ -105,7 +121,6 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
       background-size: cover;
 
       color: $thirdColor;
-      font-weight: 700;
       font-size: 2rem;
       text-align: center;
 
@@ -126,7 +141,6 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
       background-size: cover;
 
       color: $thirdColor;
-      font-weight: 700;
       font-size: 2rem;
       text-align: center;
 
@@ -139,22 +153,21 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
 
       p {
         display: block;
-        max-height: 60%;
+        max-height: 65%;
         padding: 10px;
         margin: 0.5em 2em 0 2em;
 
+        font-family: 'Arvo';
         color: $fifthColor;
         font-size: .9rem;
         text-align: center;
-        font-weight: 500;
 
         background-color: rgba(0,0,0,0.77);
 
         span {
           color: red;
-          font-weight: 900;
+          font-family: 'Baloo';
           font-size: 1.2rem;
-          font-weight: 500;
         }
       }
     }
@@ -177,18 +190,24 @@ nav.show ul {
   }
   // Menu desktop
   .logo {
+    max-height: 100px;
     flex: 1 50%;
     width: 50%;
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: left;
     padding-left: 20px;
 
     span {
+      color: $secondColor;
       width: 100%;
+      font-family: 'Arvo';
+      font-weight: bold;
       font-size: 1rem;
       text-align: center;
       display: block;
       text-align: left;
+      position: relative;
+      bottom: 20px;
     }
   }
   .menu {
@@ -206,7 +225,7 @@ nav.show ul {
       display: block;
       padding: 0;
       margin: 0;
-      font-size: 1rem;
+      font-size: 1.4rem;
       height: 2em;
       line-height: 2em;
 
@@ -229,9 +248,9 @@ nav.show ul {
       }
       li:hover {
         border-radius: 7px;
-        -webkit-box-shadow: inset 0px 0px 5px 4px rgba(0,0,0,0.4);
-        -moz-box-shadow: inset 0px 0px 5px 4px rgba(0,0,0,0.4);
-        box-shadow: inset 0px 0px 5px 4px rgba(0,0,0,0.4);
+        -webkit-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+        -moz-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+        box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
       }
     }
 
