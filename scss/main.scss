@@ -35,6 +35,50 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
     @content;
   }
 }
+// Menu mobile
+.logo {
+  flex: 1 100%;
+  font-size: 3rem;
+  text-align: center;
+
+  span {
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+  }
+}
+.menu {
+  flex: 1 100%;
+
+  .toggle {
+    font-size: 1.5rem;
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  nav ul {
+    overflow: hidden;
+    display: none;
+
+  }
+  nav ul li {
+    width:100%;
+    min-width:0;
+    border:1px solid #000;
+    font-size: 1.5rem;
+
+  }
+  nav ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $thirdColor;
+  }
+}
+// menu mobilne end
+
+
+
 
 .container {
   max-width: 1200px; //maksymalna szerokosc kontenera
@@ -65,6 +109,9 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
       font-size: 2rem;
       text-align: center;
 
+      transition:all 0.3s ease-out;
+      opacity: 1;
+
       p {
         display: none;
       }
@@ -82,8 +129,9 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
       font-weight: 700;
       font-size: 2rem;
       text-align: center;
-      font-weight: bold;
 
+
+      opacity: 0.9;
 
       -webkit-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.4);
       -moz-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.4);
@@ -95,16 +143,18 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
         padding: 10px;
         margin: 0.5em 2em 0 2em;
 
-
         color: $fifthColor;
         font-size: .9rem;
         text-align: center;
+        font-weight: 500;
 
         background-color: rgba(0,0,0,0.77);
 
         span {
-          color: $fourthColor;
+          color: red;
+          font-weight: 900;
           font-size: 1.2rem;
+          font-weight: 500;
         }
       }
     }
@@ -112,14 +162,81 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
 }
 
 
+nav.show ul {
+  display: block;
+}
+
 //Style dla >900px
 @include desktop() {
+
   .container {
     flex-direction: row;
     .block {
       flex: 0 33%;
     }
   }
+  // Menu desktop
+  .logo {
+    flex: 1 50%;
+    width: 50%;
+    font-size: 3rem;
+    text-align: left;
+    padding-left: 20px;
+
+    span {
+      width: 100%;
+      font-size: 1rem;
+      text-align: center;
+      display: block;
+      text-align: left;
+    }
+  }
+  .menu {
+    flex: 1 50%;
+    width: 50%;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 20px;
+
+    .toggle {
+      display: none;
+    }
+
+    nav ul {
+      display: block;
+      padding: 0;
+      margin: 0;
+      font-size: 1rem;
+      height: 2em;
+      line-height: 2em;
+
+      li {
+        align-items: stretch;
+        float: right;
+        max-width: 150px;
+        width: 30%;
+        margin-left: 5px;
+        border: none;
+
+        a {
+          font-size: 1.2rem;
+          display:block;
+          color:#000;
+          text-decoration:none;
+          padding:0 15px;
+          vertical-align: middle;
+        }
+      }
+      li:hover {
+        border-radius: 7px;
+        -webkit-box-shadow: inset 0px 0px 5px 4px rgba(0,0,0,0.4);
+        -moz-box-shadow: inset 0px 0px 5px 4px rgba(0,0,0,0.4);
+        box-shadow: inset 0px 0px 5px 4px rgba(0,0,0,0.4);
+      }
+    }
+
+  }
+  //  end menu desktop
 }
 //Style dla 600px<..<900px
 @include mobile() {
