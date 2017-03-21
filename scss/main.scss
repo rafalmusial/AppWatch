@@ -126,6 +126,12 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
 
       transition:all 0.3s ease-out;
       opacity: 1;
+      //
+      .flow {
+        width:100%;
+        background-color: rgba(white,0.7);
+      }
+      //
 
       p {
         display: none;
@@ -155,7 +161,8 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
         display: block;
         max-height: 65%;
         padding: 10px;
-        margin: 0.5em 2em 0 2em;
+        // margin: 0.5em 2em 0 2em;//margines poprawny, aktualnie niepotrzebny
+
 
         font-family: 'Arvo';
         color: $fifthColor;
