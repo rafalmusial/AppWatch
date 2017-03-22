@@ -1,0 +1,31 @@
+//mixin generujący poprawne instrukcje dla roznych przeglądarek
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+//mixin generujący instrukcję flex-wrap dla roznych przegladarek
+@mixin wrap($value) {
+  -webkit-flex-wrap: $value;
+  -ms-flex-wrap: $value;
+  flex-wrap: $value;
+}
+
+//mixin który wygeneruje nam media query dla rozdzielczosci od 600px do 900px
+@mixin mobile() {
+  @media screen and (min-width: #{$mobile}) and (max-width: #{$desktop}) {
+    @content;
+  }
+}
+//mixin który wygeneruje nam media query dla rozdzielczosci od 900px
+@mixin desktop() {
+  @media screen and (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+//keyframe animacji
+@-webkit-keyframes swing-in-top-fwd{0%{-webkit-transform:rotateX(-100deg);transform:rotateX(-100deg);-webkit-transform-origin:top;transform-origin:top;opacity:0}100%{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:top;transform-origin:top;opacity:1}}@keyframes swing-in-top-fwd{0%{-webkit-transform:rotateX(-100deg);transform:rotateX(-100deg);-webkit-transform-origin:top;transform-origin:top;opacity:0}100%{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:top;transform-origin:top;opacity:1}}

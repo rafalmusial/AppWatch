@@ -1,0 +1,328 @@
+// Menu mobile
+.logo {
+  max-height: 110px;
+  flex: 1 100%;
+  font-family: 'Baloo';
+  font-size: 4rem;
+  color: $firstColor;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  span {
+    color: $secondColor;
+    font-family: 'Arvo';
+    font-size: 1rem;
+    font-weight: bold;
+    display:block;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+  }
+}
+.menu {
+  flex: 1 100%;
+  font-family: 'Baloo';
+
+
+  .toggle {
+    font-size: 1.6rem;
+    text-align: center;
+    border-radius: 7px;
+    margin: 2px 10px;
+    -webkit-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.7);
+    -moz-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.7);
+    box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.7);
+  }
+
+  nav ul {
+    overflow: hidden;
+    display: none;
+
+  }
+  nav ul li {
+    width:100%;
+    min-width:0;
+    border-bottom: 2px solid $secondColor;
+    font-size: 1.5rem;
+  }
+  nav ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $secondColor;
+
+    &:hover {
+      color: $firstColor;
+    }
+  }
+}
+
+// Style mobile
+.container {
+
+  max-width: 1200px; //maksymalna szerokosc kontenera
+  margin: 0px auto; //wysrodkowanie
+  @include flexbox; //uzywamy mixinów
+  @include wrap(wrap);
+
+  .block {
+    flex: 1 100%; //domyslnie element ma 100% szerokoci
+    box-sizing: border-box;
+    padding: 15px 15px;
+    font-family: 'Baloo', cursive;
+
+    a {
+      text-decoration: none;
+    }
+
+    .inner {
+      height: 250px;
+      padding-top: 20%;
+
+      background-image: url('../images/test.jpg');// Wypełniacz pustych miejsc
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      color: $thirdColor;
+      font-size: 2rem;
+      text-align: center;
+
+      transition:all 0.3s ease-out;
+      opacity: 1;
+
+      .flow {
+        width:100%;
+        background-color: rgba(white,0.7);
+      }
+
+      p {
+        display: none;
+      }
+    }
+    .inner:hover {
+      height: 250px;
+      padding-top: 20%;
+
+      background-image: url('../images/test.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      color: $thirdColor;
+      font-size: 2rem;
+      text-align: center;
+
+      opacity: 0.9;
+
+      -webkit-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.4);
+      -moz-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.4);
+      box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.4);
+
+      p {
+//      animizowanie paragrafu
+        -webkit-animation: swing-in-top-fwd 0.4s ease-in-out both;
+        -moz-animation: swing-in-top-fwd 0.4s ease-in-out both;
+        animation: swing-in-top-fwd 0.4s ease-in-out both;
+//
+        display: block;
+        max-height: 65%;
+        padding: 10px;
+        // margin: 0.5em 2em 0 2em;//margines poprawny, aktualnie niepotrzebny
+
+
+        font-family: 'Arvo';
+        color: $fifthColor;
+        font-size: .9rem;
+        text-align: center;
+
+        background-color: rgba(0,0,0,0.77);
+
+        span {
+          color: red;
+          font-family: 'Baloo';
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+// Ukrywanie widoku menu na mobile
+nav.show ul {
+  display: block;
+}
+
+// Stylowanie artykułu
+.content {
+  flex: 1 100%;
+  font-family: 'Noto Sans';
+  font-size: 1.2rem;
+  color: $thirdColor;
+  padding: 20px 10px 10px 20px;
+  h2 {
+    color: $firstColor;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 10px 10px 10px 20px;
+  }
+  p {
+    color: $thirdColor;
+  }
+  a {
+    color: $fourthColor;
+    text-decoration: none;
+  }
+  span {
+    color: $secondColor;
+    font-weight: bold;
+  }
+}
+
+// stylowanie aside
+.panel {
+  flex:1 100%;
+  max-width: 450px;
+  min-width: 300px;
+  font-family: 'Baloo';
+  font-size: 1.2rem;
+  text-align: center;
+  color: $firstColor;
+}
+
+
+// Stylowanie stopki
+.centred {
+  margin-top: 5px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+  -moz-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+  box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+
+  color: $secondColor;
+  font-size: 1rem;
+  font-family: 'Arvo';
+  min-height: 42px;
+  justify-content: center;
+  align-items: center;
+
+  span{
+    margin-left: 3px;
+    margin-right: 3px;
+    color: red;
+    font-weight: bold;
+  }
+}
+
+
+
+//Style dla rozdzielczości od 600px do 900px
+@include mobile() {
+  .container {
+    flex-direction: row;
+    .block {
+      flex: 0 50%;
+    }
+
+    // Stylowanie artykułu
+    .content {
+      flex: 1 60%;
+    }
+
+    // stylowanie aside
+    .panel {
+      flex:1 40%;
+    }
+
+  }
+}
+
+//Style dla rozdzielczosci wiekszej niż 900px
+@include desktop() {
+
+  .container {
+    flex-direction: row;
+    .block {
+      flex: 0 33%;
+    }
+    // Stylowanie artykułu
+    .content {
+      flex: 1 60%;
+    }
+
+    // stylowanie aside
+    .panel {
+      flex:0 40%;
+    }
+  }
+  // Menu desktop
+  .logo {
+    max-height: 100px;
+    flex: 1 50%;
+    width: 50%;
+    font-size: 4rem;
+    text-align: left;
+    padding-left: 20px;
+
+    span {
+      color: $secondColor;
+      width: 100%;
+      font-family: 'Arvo';
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: center;
+      display: block;
+      text-align: left;
+      position: relative;
+      bottom: 20px;
+    }
+  }
+  .menu {
+    flex: 1 50%;
+    width: 50%;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 20px;
+
+    .toggle {
+      display: none;
+    }
+
+    nav ul {
+      display: block;
+      padding: 0;
+      margin: 0;
+      font-size: 1.4rem;
+      height: 2em;
+      line-height: 2em;
+
+      li {
+        align-items: stretch;
+        float: right;
+        max-width: 150px;
+        width: 30%;
+        margin-left: 5px;
+        border: none;
+
+        a {
+          font-size: 1.2rem;
+          display:block;
+          color:#000;
+          text-decoration:none;
+          padding:0 15px;
+          vertical-align: middle;
+        }
+      }
+      li:hover {
+        border-radius: 7px;
+        -webkit-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+        -moz-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+        box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+      }
+    }
+  }
+}
+//  end menu desktop
