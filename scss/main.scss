@@ -1,8 +1,12 @@
 $firstColor: #20365F;
 $secondColor: #376391;
 $thirdColor: #26262B;
-$fourthColor: #C24644;
+$fourthColor: red;
 $fifthColor: #eee;
+
+//keyframe animisty
+@-webkit-keyframes swing-in-top-fwd{0%{-webkit-transform:rotateX(-100deg);transform:rotateX(-100deg);-webkit-transform-origin:top;transform-origin:top;opacity:0}100%{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:top;transform-origin:top;opacity:1}}@keyframes swing-in-top-fwd{0%{-webkit-transform:rotateX(-100deg);transform:rotateX(-100deg);-webkit-transform-origin:top;transform-origin:top;opacity:0}100%{-webkit-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:top;transform-origin:top;opacity:1}}
+//
 
 //mixin generujący poprawne instrukcje dla roznych przeglądarek
 @mixin flexbox() {
@@ -44,7 +48,10 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
   font-size: 4rem;
   color: $firstColor;
   text-align: center;
-
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   span {
     color: $secondColor;
     font-family: 'Arvo';
@@ -65,6 +72,7 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
     font-size: 1.6rem;
     text-align: center;
     border-radius: 7px;
+    margin: 2px 10px;
     -webkit-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.7);
     -moz-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.7);
     box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.7);
@@ -86,6 +94,7 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
     text-align: center;
     text-decoration: none;
     color: $secondColor;
+
     &:hover {
       color: $firstColor;
     }
@@ -126,12 +135,11 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
 
       transition:all 0.3s ease-out;
       opacity: 1;
-      //
+
       .flow {
         width:100%;
         background-color: rgba(white,0.7);
       }
-      //
 
       p {
         display: none;
@@ -150,7 +158,6 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
       font-size: 2rem;
       text-align: center;
 
-
       opacity: 0.9;
 
       -webkit-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.4);
@@ -158,6 +165,11 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
       box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.4);
 
       p {
+//      animizowanie paragrafu
+        -webkit-animation: swing-in-top-fwd 0.4s ease-in-out both;
+        -moz-animation: swing-in-top-fwd 0.4s ease-in-out both;
+        animation: swing-in-top-fwd 0.4s ease-in-out both;
+//
         display: block;
         max-height: 65%;
         padding: 10px;
@@ -181,18 +193,111 @@ $desktop: 900px; //breakpointy dla wikeszego ekranu
   }
 }
 
-
+// Ukrywanie widoku menu na mobile
 nav.show ul {
   display: block;
 }
 
-//Style dla >900px
+// Stylowanie artykułu
+.content {
+  flex: 1 100%;
+  font-family: 'Noto Sans';
+  font-size: 1.2rem;
+  color: $thirdColor;
+  padding: 20px 10px 10px 20px;
+  h2 {
+    color: $firstColor;
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding: 10px 10px 10px 20px;
+  }
+  p {
+    color: $thirdColor;
+  }
+  a {
+    color: $fourthColor;
+    text-decoration: none;
+  }
+  span {
+    color: $secondColor;
+    font-weight: bold;
+  }
+}
+
+// stylowanie aside
+.panel {
+  flex:1 100%;
+  max-width: 450px;
+  min-width: 300px;
+  font-family: 'Baloo';
+  font-size: 1.2rem;
+  text-align: center;
+  color: $firstColor;
+}
+
+
+// Stylowanie stopki
+.centred {
+  margin-top: 5px;
+  background-color: white;
+  -webkit-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+  -moz-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+  box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
+
+  color: $secondColor;
+  font-size: 1rem;
+  font-family: 'Arvo';
+  min-height: 42px;
+  justify-content: center;
+  align-items: center;
+
+  span{
+    margin-left: 3px;
+    margin-right: 3px;
+    color: red;
+    font-weight: bold;
+  }
+}
+
+
+
+//Style dla rozdzielczości od 600px do 900px
+@include mobile() {
+  .container {
+    flex-direction: row;
+    .block {
+      flex: 0 50%;
+    }
+
+    // Stylowanie artykułu
+    .content {
+      flex: 1 60%;
+    }
+
+    // stylowanie aside
+    .panel {
+      flex:1 40%;
+    }
+
+  }
+}
+
+//Style dla rozdzielczosci wiekszej niż 900px
 @include desktop() {
 
   .container {
     flex-direction: row;
     .block {
       flex: 0 33%;
+    }
+    // Stylowanie artykułu
+    .content {
+      flex: 1 60%;
+    }
+
+    // stylowanie aside
+    .panel {
+      flex:0 40%;
     }
   }
   // Menu desktop
@@ -260,16 +365,6 @@ nav.show ul {
         box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
       }
     }
-
-  }
-  //  end menu desktop
-}
-//Style dla 600px<..<900px
-@include mobile() {
-  .container {
-    flex-direction: row;
-    .block {
-      flex: 0 50%;
-    }
   }
 }
+//  end menu desktop
