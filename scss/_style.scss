@@ -191,7 +191,7 @@ nav.show ul {
     padding: 10px;
   }
   .video {
-  width: 100%;
+  width: 98%;
   height: 230px;
   margin-left: 0.3%;
   margin-right: 0.3%;
@@ -214,18 +214,19 @@ nav.show ul {
 // Stylowanie stopki
 .centred {
   margin-top: 5px;
-  background-color: white;
+  background-color: $firstColor;
   border-radius: 5px;
   -webkit-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
   -moz-box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
   box-shadow: inset 0px 0px 5px 4px rgba(55, 99, 145, 0.5);
 
-  color: $secondColor;
+  color: $fifthColor;
   font-size: 1rem;
   font-family: 'Arvo';
   min-height: 42px;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
 
   span{
     margin-left: 3px;
@@ -358,40 +359,40 @@ nav.show ul {
   }
 }
 
-// // Preloader
-// .preloader {
-//   width: $preloader-size;
-//   height: $preloader-size;
-//   border: $preloader-border-size solid $preloader-color;
-//   border-radius: 100%;
-// }
-// .preloader:before,
-// .preloader:after {
-//   content: '';
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   margin: -.2rem 0 0 -.2rem;
-//   border-bottom: $preloader-border-size solid $preloader-color;
-//   border-radius: .6rem;
-//   -webkit-transform-origin: .2rem center;
-// }
-// .preloader:before { // wskazówka godziny
-//   width: 30%;
-//   -webkit-animation: hour $preloader-spin-duration linear infinite;
-// }
-// .preloader:after { // wskazówka minuty
-//   width: 40%;
-//   background-color: $preloader-color;
-//   -webkit-animation: minute $preloader-spin-duration-fast linear infinite;
-// }
-// // style preloader
-// .preloader {
-//   position: fixed;
-//   top: 0;
-//   bottom: 15px;
-//   left: 0;
-//   right: 5px;
-//   margin: auto;
-//
-// }
+// Preloader
+.preloader {
+  width: $preloader-size;
+  height: $preloader-size;
+  border: $preloader-border-size solid $preloader-color;
+  border-radius: 100%;
+}
+.preloader:before,
+.preloader:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -.2rem 0 0 -.2rem;
+  border-bottom: $preloader-border-size solid $preloader-color;
+  border-radius: .6rem;
+  -webkit-transform-origin: .2rem center;
+}
+.preloader:before { // wskazówka godziny
+  width: 30%;
+  -webkit-animation: hour $preloader-spin-duration linear infinite;
+}
+.preloader:after { // wskazówka minuty
+  width: 40%;
+  background-color: $preloader-color;
+  -webkit-animation: minute $preloader-spin-duration-fast linear infinite;
+}
+// style preloader
+.preloader {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+}
