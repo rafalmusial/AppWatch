@@ -174,10 +174,18 @@ nav.show ul {
   a {
     color: $fourthColor;
     text-decoration: none;
+    span {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $fourthColor;
+    }
   }
   span {
     color: $secondColor;
     font-weight: bold;
+    font-size: 1.6rem;
+    display: inline-block;
+    margin: 0 auto;
   }
 }
 
