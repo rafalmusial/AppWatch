@@ -39,20 +39,44 @@
       <h2>Kontakt</h2>
         <p>
           Bardzo mi miło, że chcesz się ze mną skontaktować.<br><br>
-          Niebawem wstawię tu formularz kontaktowy, ale do tego czasu polecam kontakt poprzez maila lub LinkedIn. Dla zainteresowanych pozostawiam także link do mojego profilu na GitHub.
+          Skorzystaj z formularza poniżej:
+          <!-- Formularz -->
+          <hr>
+          <form class="form" id="contactForm" method="post" novalidate action="/send-scripts.php">
+            <div class="form-row">
+              <label for="field-name">Cześć, mam na imię Rafał, a ty?</label>
+              <input type="text" name="name" required id="field-name" data-error="Wypełnij to pole" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
+            </div>
+            <div class="form-row">
+              <label for="field-email">Podaj Email</label>
+              <input type="email" name="email" required id="field-email" data-error="Wpisz poprawny email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+            </div>
+            <div class="form-row">
+              <label for="field-message">Zostaw wiadomość</label>
+              <textarea name="message" required data-error="Musisz wypełnić pole" id="field-message" pattern=".+"></textarea>
+            </div>
+            <div class="form-row">
+              <button type="submit" class="submit-btn">
+                Wyślij
+              </button>
+            </div>
+          </form>
+          <hr>
+          <!-- Formularz end  -->
+          <br>
+          Polecam także kontakt poprzez maila lub LinkedIn. Dla zainteresowanych pozostawiam także link do mojego profilu na GitHub.
           <br><br>
           <a href="mailto:musial.rafal@gmail.com" target="_blank">musial.rafal@gmail.com</a>
           <br>
           <a href="https://www.linkedin.com/in/rafalmusial/" target="_blank">LinkedIn</a>
           <br>
           <a href="https://github.com/rafalmusial" target="_blank">Github</a>
+          <br><br>
         </p>
-        <br>
-        <p>Napiszę w przyszłości coś więcej o sobię, a teraz tylko pozostawię tu to:<br>
+        <p>Napiszę w przyszłości coś więcej o sobię, a teraz tylko pozostawię tu to:<br><br>
           <iframe src="https://www.youtube.com/embed/-8FY1W6CiIo" frameborder="0" allowfullscreen class="video"></iframe>
         </p>
     </article>
-
     <aside class="panel">
       Polecam
       <div class='block'>
