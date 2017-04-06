@@ -42,3 +42,12 @@
     -webkit-transform: rotate(360deg);
   }
 }
+// Keyframe animacji inputa formularza
+@keyframes rotateSingleLoading {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
